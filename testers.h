@@ -10,7 +10,20 @@ public:
 tester(){
 start=time(NULL);
 }
-
+void maxprofit(){
+ int input;
+algo alg = algo();
+vector<int> vect;
+int profit;
+cout << "Enter your list of numbers below." <<endl;
+while(cin>>input){
+vect.push_back(input);
+}
+if(!cin.fail()){
+profit=alg.maxProfit(vect);
+}
+cout << "MAXIMUM PROFIT ON TRADE INTERVAL IS: " <<profit << endl; 
+}
 void stringsearch(){
  bool ans = true;
   string search;
@@ -44,10 +57,6 @@ else{ cout << "ONLY SINGLE LETTERS ALLOWED" << endl;}
 }
 }
 }
-
-
-
-
 
 
 private:
