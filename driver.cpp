@@ -3,4 +3,5 @@
 int main(){
  tester helper=tester();
 helper.stringsearch();
+helper.maxprofit();
 }
