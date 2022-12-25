@@ -14,11 +14,11 @@ menu();
  switch(input){
   case 1:{
   helper.stringsearch();
-  break;
+  return main();
   }
   case 2:{
   helper.maxprofit();
-  break;
+  return main();
   }
  default: cout << "INVALID INPUT... " <<endl;
  return main();
