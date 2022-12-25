@@ -4,6 +4,7 @@ void menu(){
  cout << "WHICH PROGRAM DO YOU NEED TO RUN?" <<endl;
  cout << "1) STRING SEARCH" <<endl;
  cout << "2) MAX PROFIT" <<endl;
+ cout << "3) EXIT" <<endl;
 }
 int main(){
  tester helper=tester();
@@ -19,6 +20,9 @@ menu();
   case 2:{
   helper.maxprofit();
   return main();
+  }
+  case 3:{
+   return 0;
   }
  default: cout << "INVALID INPUT... " <<endl;
  return main();
