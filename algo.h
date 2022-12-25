@@ -207,6 +207,7 @@ public:
     }
     return total;
    */ 
+   return 0;
   }
 };
 #endif
