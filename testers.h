@@ -69,11 +69,12 @@ public:
       nvect=alg.pset(vect);
       cout << "ALL SUBSETS:" <<endl;
       for(int i=0;i<nvect.size();i++){
+        cout << "PSET" << i+1<<":";
         for(int k=0;k<nvect[i].size();k++){
-          cout << nvect[i][k] << " ";
+          cout << nvect[i][k] << ",";
         }
+        cout<<endl;
       }
-      cout << endl;
 
   }
 
