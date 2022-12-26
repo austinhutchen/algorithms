@@ -62,20 +62,18 @@ public:
     vector<int> vect;
     vector<vector<int> > nvect;
     int profit;
-    cout << "Enter your list of numbers below." << endl;
-    while (cin >> input) {
+    cout << "Enter your list of numbers below. type 1978 when done.." << endl;
+    while (cin >> input&&input!=1978) {
       vect.push_back(input);
     }
-    if (!cin.fail()) {
       nvect=alg.pset(vect);
       cout << "ALL SUBSETS:" <<endl;
       for(int i=0;i<nvect.size();i++){
         for(int k=0;k<nvect[i].size();k++){
-          cout << nvect[i][k];
+          cout << nvect[i][k] << " ";
         }
       }
       cout << endl;
-    }
 
   }
 
