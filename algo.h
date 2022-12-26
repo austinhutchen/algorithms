@@ -1,8 +1,8 @@
-#ifndef ALGO_H
-#define ALGO_H
+#pragma once
 #include <iostream>
 #include <map>
 #include <vector>
+#include <cmath>
 using namespace std;
 // common algorithms I use. Updated regularly
 class algo {
@@ -76,7 +76,7 @@ public:
     return input;
   }
 
-  int maxProfit(vector<int> &prices) {
+  int maxProfit(vector<int> &prices) { 
     if (prices.size() <= 1) {
       return 0;
     }
@@ -84,6 +84,7 @@ public:
     int max = *max_element(prices.begin()++, prices.end());
     int min = *min_element(prices.begin(), prices.end()--);
     int invalid = 0;
+    // unecessary loop. Could just do max-min. 
     for (int i = 0; i < prices.size(); i++) {
       if (prices[i] == min) {
         for (int y = i; y < prices.size(); y++) {
@@ -93,6 +94,7 @@ public:
         }
       }
       if (prices[i] < prices[i - 1] && i != 0) {
+        // if the entire vector is decreasing, invalid is equal to num elements inside of the prices vector, and vector is impossible to gain profit.
         invalid++;
       }
     }
@@ -209,5 +211,28 @@ public:
    */ 
    return 0;
   }
+  
+void helper(vector<int> nums, vector<vector<int> > &sol,int start, int end, vector<int> &subset){
+//Given an integer array nums of unique elements, return all possible subsets
+// power set represented by putting an element in at each step or leaving it out of new set
+// needs to use stack and recursion, with a helper
+if(start>end){
+ sol.push_back(subset);
+ return;
+}
+subset.push_back(nums[start]);
+helper(nums,sol,start+1,end,subset);
+subset.pop_back();
+helper(nums,sol,start+1,end,subset);
+}
+vector<vector<int> >pset(vector <int> &nums_){
+   vector<vector<int> > sol;
+        vector<int> subset;
+        helper(nums_,sol,0,nums_.size()-1,subset);
+        return sol;
+}
+
+  
 };
-#endif
+
+
