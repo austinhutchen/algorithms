@@ -74,6 +74,7 @@ public:
           cout << nvect[i][k];
         }
       }
+      cout << endl;
     }
 
   }
