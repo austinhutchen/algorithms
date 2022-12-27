@@ -67,7 +67,7 @@ public:
       vect.push_back(input);
     }
       nvect=alg.pset(vect);
-      cout << "ALL SUBSETS:" <<endl;
+    cout << "ALL "<< pow(2,vect.size())<<" SUBSETS:" <<endl;
       for(int i=0;i<nvect.size();i++){
         cout << "PSET" << i+1<<":";
         for(int k=0;k<nvect[i].size();k++){

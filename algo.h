@@ -217,6 +217,8 @@ void helper(vector<int> nums, vector<vector<int> > &sol,int start, int end, vect
 // power set represented by putting an element in at each step or leaving it out of new set
 // needs to use stack and recursion, with a helper
 if(start>end){
+  // if vector is empty, 
+  // add the empty set and end recursion
  sol.push_back(subset);
  return;
 }
@@ -225,6 +227,7 @@ helper(nums,sol,start+1,end,subset);
 subset.pop_back();
 helper(nums,sol,start+1,end,subset);
 }
+// main function that recursively calls helper 
 vector<vector<int> >pset(vector <int> &nums_){
    vector<vector<int> > sol;
         vector<int> subset;
