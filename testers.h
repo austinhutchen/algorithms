@@ -57,25 +57,28 @@ public:
     }
   }
   void findpset() {
-  int input;
+    int input;
     algo alg = algo();
     vector<int> vect;
     vector<vector<int> > nvect;
     int profit;
     cout << "Enter your list of numbers below. type 1978 when done.." << endl;
-    while (cin >> input&&input!=1978) {
+    while (cin >> input && input != 1978) {
       vect.push_back(input);
     }
-      nvect=alg.pset(vect);
-    cout << "ALL "<< pow(2,vect.size())<<" SUBSETS:" <<endl;
-      for(int i=0;i<nvect.size();i++){
-        cout << "PSET" << i+1<<":";
-        for(int k=0;k<nvect[i].size();k++){
-          cout << nvect[i][k] << ",";
+    nvect = alg.pset(vect);
+    int cardinality = pow(2, vect.size());
+    cout << "ALL " << cardinality << " SUBSETS:" << endl;
+    for (int i = 0; i < nvect.size(); i++) {
+      cout << "PSET" << i + 1 << ":";
+        if (i==nvect.size()-1) {
+          cout << "∅";
         }
-        cout<<endl;
+      for (int k = 0; k < nvect[i].size(); k++) {
+          cout << nvect[i][k] << ",";
       }
-
+      cout << endl;
+    }
   }
 
 private:
